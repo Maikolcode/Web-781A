@@ -1,7 +1,8 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:html5="http://xmlns.jcp.org/jsf/passthrough">
     <h:head>
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -30,14 +31,14 @@
                     </a>
                 </div>
                 <div class="login-form">
-                    <form>
+                    <h:form>
                         <div class="form-group">
                             <label>Correo Electronico</label>
-                            <input type="email" class="form-control" placeholder="Correo"/>
+                            <h:inputText value="#{testRequest.nombreUser}"  class="form-control" html5:placeholder="Correo Electronico"/>
                         </div>
                         <div class="form-group">
                             <label>Contraseña</label>
-                            <input type="password" class="form-control" placeholder="Contraseña"/>
+                            <h:inputSecret value="#{testRequest.clave}" class="form-control" html5:placeholder="Contraseña"/>
                         </div>
                         <div class="checkbox">
                             <label>
@@ -48,7 +49,7 @@
                             </label>
 
                         </div>
-                        <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30">Ingresar</button>
+                        <h:commandButton action="#{testRequest.datosFormulario()}" class="btn btn-success btn-flat m-b-30 m-t-30" value="Ingresar"/>
                         <div class="social-login-content">
                             <div class="social-button">
                                 <button type="button" class="btn social facebook btn-flat btn-addon mb-3"><i class="ti-facebook"></i>Registrate por facebook</button>
@@ -58,7 +59,7 @@
                         <div class="register-link m-t-15 text-center">
                             <p>Aun no tienes cuenta? <a href="PublicPages/page-register.xhtml"> Registrate Aqui</a></p>
                         </div>
-                    </form>
+                    </h:form>
                 </div>
             </div>
         </div>
